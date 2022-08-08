@@ -1,0 +1,26 @@
+<h1>Jonathan Tsang</h1>
+<h2 class="mb-5">Kajabi - Take Home Test</h2>
+<dl class="small-font-size">
+  <dt class="mb-2">Requirements</dt>
+  <dd>** There is only 1 rule. You cannot call the API directly from the frontend.</dd>
+  <dd>Start a new repository with the desired tech stackImplement a method of fetching the data from the API on the backend and serving to the frontend</dd>
+  <dd>Display a paginated list view of the results of employees</dd>
+  <dd>Provide a link to go to a page to display more details about a specific employee</dd>
+  <dd>Ensure that users can enter an email address to help narrow down the employee list closer to the person they are looking for</dd>
+</dl>
+<div class="reqres-users-table d-flex shadow pt-3 pb-3 mb-5 bg-body rounded">
+  <table id="reqres-users-table" class="table table-bordered table-hover table-sm table-responsive"></table>
+  <nav class="reqres-pagination" aria-label="Users table navigation">
+    <ul class="pagination mb-0">
+      <li class="page-item"><a class="page-link" href="#" aria-label="Go to previous page">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="#" aria-label="Go to page 1">1</a></li>
+      <li class="page-item"><a class="page-link" href="#" aria-label="Go to page 2">2</a></li>
+      <li class="page-item"><a class="page-link" href="#" aria-label="Go to page 3">3</a></li>
+      <li class="page-item"><a class="page-link" href="#" aria-label="Go to next page">Next</a></li>
+    </ul>
+  </nav>
+</div>
+
+<script>
+  var prefetch_data = '<%=raw @prefetch_users.to_json %>';
+</script>
