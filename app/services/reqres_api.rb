@@ -24,7 +24,6 @@ class ReqresApi
   end
 
   def per_page
-    puts prefetch_users
     per_page = prefetch_users['per_page']
   end
 
