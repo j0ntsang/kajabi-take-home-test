@@ -1,26 +1,53 @@
-<h1>Jonathan Tsang</h1>
-<h2 class="mb-5">Kajabi - Take Home Test</h2>
-<dl class="small-font-size">
-  <dt class="mb-2">Requirements</dt>
-  <dd>** There is only 1 rule. You cannot call the API directly from the frontend.</dd>
-  <dd>Start a new repository with the desired tech stackImplement a method of fetching the data from the API on the backend and serving to the frontend</dd>
-  <dd>Display a paginated list view of the results of employees</dd>
-  <dd>Provide a link to go to a page to display more details about a specific employee</dd>
-  <dd>Ensure that users can enter an email address to help narrow down the employee list closer to the person they are looking for</dd>
-</dl>
-<div class="reqres-users-table d-flex shadow pt-3 pb-3 mb-5 bg-body rounded">
-  <table id="reqres-users-table" class="table table-bordered table-hover table-sm table-responsive"></table>
-  <nav class="reqres-pagination" aria-label="Users table navigation">
-    <ul class="pagination mb-0">
-      <li class="page-item"><a class="page-link" href="#" aria-label="Go to previous page">Previous</a></li>
-      <li class="page-item"><a class="page-link" href="#" aria-label="Go to page 1">1</a></li>
-      <li class="page-item"><a class="page-link" href="#" aria-label="Go to page 2">2</a></li>
-      <li class="page-item"><a class="page-link" href="#" aria-label="Go to page 3">3</a></li>
-      <li class="page-item"><a class="page-link" href="#" aria-label="Go to next page">Next</a></li>
-    </ul>
-  </nav>
-</div>
-
+<main class="reqres container">
+  <div class="tht__container">
+    <div class="tht__heading">
+      <h1>Jonathan Tsang</h1>
+      <h2 class="mb-4">Kajabi <small class="text-muted">Take Home Test</small></h2>
+    </div>
+    <div class="tht__requirements">
+      <dl class="small-font-size">
+        <dt class="mb-2">Requirements</dt>
+        <dd>
+          <span class="text-success">&check;</span>&nbsp;
+          <small>Start a new repository with the desired tech stack</small>
+        </dd>
+        <dd>
+          <span class="text-success">&check;</span>&nbsp;
+          <small>Implement a method of fetching the data from the API on the backend and serving to the frontend</small>
+        </dd>
+        <dd>
+          <span class="text-success">&check;</span>&nbsp;
+          <small>You cannot call the API directly from the frontend.</small>
+        </dd>
+        <dd>
+          <span class="text-danger">&#10005;</span>&nbsp;
+          <small>Display a paginated list view of the results of employees</small></dd>
+        <dd>
+          <span class="text-success">&check;</span>&nbsp;
+          <small>Provide a link to go to a page to display more details about a specific employee</small></dd>
+        <dd>
+          <span class="text-success">&check;</span>&nbsp;
+          <small>Ensure that users can enter an email address to help narrow down the employee list closer to the person they are looking for</small></dd>
+      </dl>
+    </div>
+    <div class="tht__reqres">
+      <label for="reqres-search" class="form-label">Search all users</label>
+      <div class="input-group mb-3">
+        <input id="reqres-search" type="text" class="form-control" aria-label="Type to search" placeholder="jw.tsang@gmail.com">
+        <button id="reqres-search-clear" class="btn btn-outline-primary">Clear</button>
+      </div>
+      <div class="reqres__users-table d-flex shadow pb-3 mb-5 bg-body rounded">
+        <table id="reqres__users-table" class="table table-hover table-sm table-responsive"></table>
+        <nav class="reqres__pagination" aria-label="Users table navigation">
+          <ul class="pagination mb-0"></ul>
+        </nav>
+      </div>
+      <div class="reqres__user-details"></div>
+    </div>
+  </div>
+</main>
 <script>
   var prefetch_data = '<%=raw @prefetch_users.to_json %>';
+  var total_pages = '<%=raw @total_pages %>';
+  var per_page = '<%=raw @per_page %>';
 </script>

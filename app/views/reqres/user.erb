@@ -1,0 +1,15 @@
+<main class="reqres container">
+  <button onclick="history.back()" class="btn btn-link btn--go-back">&larr; Go Back</button>
+  <div class="user-details__card">
+    <div class="user-details__card-inner shadow">
+      <img class="user-details__avatar" src="<%= @user['data']['avatar'] %>" alt="" role="presentation">
+      <div class="user-details__profile">
+        <h1><%= @user['data']['first_name'] + " " + @user['data']['last_name'] %></h1>
+        <p>Email: <a href="mailto:<%= @user['data']['email'] %>"><%= @user['data']['email'] %></a></p>
+      </div>
+    </div>
+    <a href="<%= @user['support']['url'] %>" target="_blank" rel="noopener noreferrer">
+      <small><%= @user['support']['text'] %></small>
+    </a>
+  </div>
+</main>
