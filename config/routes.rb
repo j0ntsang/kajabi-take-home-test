@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   root 'reqres#index'
+  get 'user/:id', to: 'reqres#user'
 
   get 'welcome', to: 'welcome#index'
 
