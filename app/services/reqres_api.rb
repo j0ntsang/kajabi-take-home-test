@@ -6,10 +6,14 @@ class ReqresApi
 
   def prefetch_users
     @response = self.class.get("#{self.class.base_uri}").parsed_response
-    total_pages = @response['total_pages']
+  end
+
+  def formatted_prefetch
+    @prefetch = prefetch_users
     @prefetch_users = []
+    page_count = total_pages
     i = 1
-    while i <= total_pages do
+    while i <= page_count do
       page = page(i)
       page['data'].each { |user|
         @prefetch_users.push({ id: user['id'], avatar: user['avatar'], email: user['email'], first_name: user['first_name'], last_name: user['last_name'] })
@@ -17,6 +21,15 @@ class ReqresApi
       i += 1
     end
     return @prefetch_users
+  end
+
+  def per_page
+    puts prefetch_users
+    per_page = prefetch_users['per_page']
+  end
+
+  def total_pages
+    total_pages = prefetch_users['total_pages']
   end
 
   def page(id = 1)

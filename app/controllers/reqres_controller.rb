@@ -1,18 +1,26 @@
 class ReqresController < ApplicationController
-  before_action :prefetch_users
+  before_action :prefetch_users, :pagination
 
   def index
-    if viewing_user
-      id = params[:user]
-      load_user(id)
-    end
+  end
+
+  def user
+    id = params[:id]
+    load_user(id)
   end
 
   private
 
   def prefetch_users
     unless viewing_user
-      @prefetch_users = ReqresApi.new.prefetch_users()
+      @prefetch_users = ReqresApi.new.formatted_prefetch()
+    end
+  end
+
+  def pagination
+    unless viewing_user
+      @total_pages = ReqresApi.new.total_pages()
+      @per_page = ReqresApi.new.per_page()
     end
   end
 
