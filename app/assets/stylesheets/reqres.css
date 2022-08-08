@@ -1,0 +1,36 @@
+body {
+  padding: 32px;
+  border: 1px solid #e9e9e9;
+}
+
+.reqres-users-table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.reqres-pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.table .avatar {
+  width: 120px;
+}
+
+.table .avatar img {
+  display: block;
+  width: 120px;
+  height: 120px;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.table tbody tr:focus,
+.table tbody tr:hover {
+  cursor: pointer;
+}
